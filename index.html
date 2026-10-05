@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BOLDcast One Piece Guide</title>
+
+        <!-- Favicon -->
+        <link rel="icon" href="Luffy.ico" />
+
+        <!-- General Meta Tags -->
+        <meta name="description" content="a comprehensive overview for all Cover Stories, Movies, Specials & Fillers — made by the community for BOLDcast" />
+
+        <!-- Open Graph / Social Media Meta Tags -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="One Piece Cover Stories & Extra Content Guide" />
+        <meta property="og:description" content="a comprehensive overview for all Cover Stories, Movies, Specials & Fillers — made by the community for BOLDcast" />
+        <meta property="og:image" content="https://strawhatfiles.github.io/cover-stories/icon.jpg" />
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="One Piece Cover Stories & Extra Content Guide" />
+        <meta name="twitter:description" content="a comprehensive overview for all Cover Stories, Movies, Specials & Fillers — made by the community for BOLDcast" />
+        <meta name="twitter:image" content="https://strawhatfiles.github.io/cover-stories/icon.jpg" />
+
+        <!-- Preconnect to External Domains -->
+        <link rel="preconnect" href="https://drive.google.com" />
+        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+        <link rel="preconnect" href="https://www.netflix.com" />
+
+        <style>
+            body {
+                background-color: #000000e8; /* Prevents white flash */
+                margin: 0;                   /* Prevents weird margin jumps */
+            }
+        </style>
+
+        <!-- Version-Based Cache Busting -->
+        <script>
+            const SITE_VERSION = "1.0"; // Date.now().toString();
+
+            // 1. Dynamically load the CSS
+            const cssLink = document.createElement("link");
+            cssLink.rel = "stylesheet";
+            cssLink.href = `styles.css?v=${SITE_VERSION}`;
+            document.head.appendChild(cssLink);
+
+            // 2. Dynamically load Cover Story data
+            const dataScript = document.createElement("script");
+            dataScript.src = `coverStory.js?v=${SITE_VERSION}`;
+            dataScript.defer = true;
+            dataScript.async = false; // Forces in-order execution
+            document.head.appendChild(dataScript);
+
+            // 3. Dynamically load the JS
+            const jsScript = document.createElement("script");
+            jsScript.src = `main.js?v=${SITE_VERSION}`;
+            jsScript.defer = true; // Wait until <body> is built
+            jsScript.async = false; // Forces in-order execution
+            document.head.appendChild(jsScript);
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>One Piece: Cover Stories & more</h1>
+            <p class="subtitle">content compiled by: ChocoBoshi, Blue Majin, Oriem, MoonFlowerCrown, idziman, Artemis, Iris & meme planet</p>
+            <p class="subtitle">website created by: klairvoyage</p>
+        </div>
+
+        <button id="scrollToggle" class="scroll-btn" aria-label="Scroll">
+            <svg id="scrollIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <path d="m18 15-6-6-6 6" />
+            </svg>
+        </button>
+
+        <div class="tab-container">
+            <!-- <button class="tab" onclick="showTab('homepage')">Homepage</button> -->
+            <button class="tab" onclick="showTab('sbs')">SBS</button>
+            <button class="tab" onclick="showTab('ops-eds')">OPs & EDs</button>
+            <button class="tab" onclick="showTab('cover-stories')">Cover Stories</button>
+            <button class="tab" onclick="showTab('filler')">Filler</button>
+            <button class="tab" onclick="showTab('specials-movies')">Specials & Movies</button>
+        </div>
+
+        <div class="content">
+            <!-- Homepage Tab -->
+            <div id="tab-display"></div>
+            <!-- (Important) SBS Tab -->
+            <!-- OPs & EDs Tab -->
+            <!-- Cover Stories Tab -->
+            <!-- Filler Tab -->
+            <!-- Specials & Movies Tab -->
+        </div>
+
+        <div id="lightbox" class="lightbox">
+            <button class="lightbox-close" onclick="closeLightbox()" title="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="lightbox-fullscreen" onclick="toggleFullscreen()" title="Toggle Fullscreen">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                </svg>
+            </div>
+
+            <div id="gallery-ui" style="display: none;">
+                <div class="color-toggle-wrapper" onclick="event.stopPropagation();">
+                    <span class="color-toggle-label">COLORED</span>
+                    <label class="switch">
+                        <input type="checkbox" id="color-toggle-checkbox" checked onchange="toggleColorMode(event)">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                
+                <span class="lightbox-nav left" onclick="navigateGallery(-1); event.stopPropagation();">&#10094;</span>
+                <span class="lightbox-nav right" onclick="navigateGallery(1); event.stopPropagation();">&#10095;</span>
+                
+                <div id="lightbox-counter-wrapper" onclick="toggleCustomDropdown(event)">
+                    <span id="lightbox-page-display"></span>
+                    <div id="custom-page-dropdown"></div>
+                </div>
+            </div>
+
+            <div class="lightbox-content" style="width: fit-content; height: fit-content; padding: 0; background: transparent; overflow: hidden; display: flex;">
+                <div id="auto-censor-bar" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 0; z-index: 10; backdrop-filter: blur(25px) brightness(0.7); -webkit-backdrop-filter: blur(25px) brightness(0.7); pointer-events: none; border-bottom: 1px solid rgba(255,255,255,0.1);"></div>
+                <img id="lightbox-img" src="" alt="" style="display: block; max-width: 95vw; max-height: calc(100vh - 120px); width: auto; height: auto;" />
+            </div>
+        </div>
+    </body>
+</html>

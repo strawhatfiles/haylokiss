@@ -6,10 +6,10 @@
 
 const tabContents = {
     'sbs': './pages/1_sbs.html',
-    'cover-stories': './pages/2_cover-stories.html',
-    'specials-movies': './pages/3_specials-movies.html',
+    'ops-eds': './pages/2_ops-eds.html',
+    'cover-stories': './pages/3_cover-stories.html',
     'filler': './pages/4_filler.html',
-    'ops-eds': './pages/5_ops-eds.html'
+    'specials-movies': './pages/5_specials-movies.html'
 };
 
 const APP_VERSION = typeof SITE_VERSION !== 'undefined' ? SITE_VERSION : Date.now(); // Fallback
@@ -196,10 +196,10 @@ function toggleESP(e) {
     if (countDisplay && countDesc) {
         if (isChecked) {
             countDisplay.innerText = `= ${totalWithESP}`;
-            countDesc.innerHTML = `${totalWithESP} yet-to-watch filler episode count <u>includes</u> the ${espCount} E-SP recap summary episodes`;
+            countDesc.innerHTML = `${totalWithESP} filler episodes count <u>includes</u> the ${espCount} E-SP recap summary episodes`;
         } else {
             countDisplay.innerText = `= ${baseCount}`;
-            countDesc.innerHTML = `${baseCount} yet-to-watch filler episode count does <u>not</u> include the ${espCount} E-SP recap summary episodes`;
+            countDesc.innerHTML = `${baseCount} filler episodes count does <u>not</u> include the ${espCount} E-SP recap summary episodes`;
         }
     }
 }
