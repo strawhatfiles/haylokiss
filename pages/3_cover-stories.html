@@ -1,0 +1,538 @@
+<div class="progress-counter">
+    <div class="progress-bar-container">
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <div class="progress-markers">
+            <a href="#cover-story-1" class="marker completed" data-number="1">1</a>
+            <a href="#cover-story-2" class="marker completed" data-number="2">2</a>
+            <a href="#cover-story-3" class="marker completed" data-number="3">3</a>
+            <a href="#cover-story-4" class="marker completed" data-number="4">4</a>
+            <a href="#cover-story-5" class="marker completed" data-number="5">5</a>
+            <a href="#cover-story-6" class="marker completed" data-number="6">6</a>
+            <a href="#cover-story-7" class="marker completed" data-number="7">7</a>
+            <a href="#cover-story-8" class="marker completed" data-number="8">8</a>
+            <a href="#cover-story-9" class="marker completed" data-number="8.5">8.5</a>
+            <a href="#cover-story-10" class="marker completed" data-number="9">9</a>
+            <a href="#cover-story-11" class="marker completed" data-number="9.5">9.5</a>
+            <a href="#cover-story-12" class="marker completed" data-number="10">10</a>
+            <a href="#cover-story-13" class="marker completed" data-number="11-18">11-18</a>
+            <a href="#cover-story-14" class="marker completed" data-number="19">19</a>
+            <a href="#cover-story-15" class="marker completed" data-number="20">20</a>
+            <a href="#cover-story-16" class="marker incomplete" data-number="21">21</a>
+            <a href="#cover-story-17" class="marker incomplete" data-number="22">22</a>
+            <a href="#cover-story-18" class="marker incomplete" data-number="23">23</a>
+            <a href="#cover-story-19" class="marker incomplete" data-number="24">24</a>
+            <a href="#cover-story-20" class="marker incomplete" data-number="25">25</a>
+            <!--
+            <a href="#cover-story-21" class="marker incomplete" data-number="26">26</a>
+             -->
+        </div>
+    </div>
+    <p class="progress-label">Cover Story Progress • XX of XX Complete</p>
+</div>
+
+<div class="mode-toggle-container" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4rem; margin: 2rem 0; background: rgba(255, 255, 255, 0.05); padding: 1.2rem 2rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
+    <div style="color: #b0b0b0; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">
+        Include <span style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700;">Cover Spreads</span> as part of the:
+    </div>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+        <span id="mode-story-label" style="color: #666; font-weight: bold; font-size: 1.1rem; transition: color 0.3s ease;">Cover Stories</span>
+        <label class="switch" style="margin: 0;">
+            <input type="checkbox" id="gallery-mode-toggle" checked onchange="toggleGalleryMode(event)">
+            <span class="slider"></span>
+        </label>
+        <span id="mode-request-label" style="color: #ffc107; font-weight: bold; font-size: 1.1rem; transition: color 0.3s ease;">Cover Pages</span>
+    </div>
+</div>
+
+<div class="cover-stories-grid">
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="" id="cover-story-0">
+            <div class="cover-story-content">
+                <h3><br>&nbsp;</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 1 ⟼ 34<br>
+                ➼ Romance Dawn ⟼ Syrup Village
+                </p>
+                <div class="pdf-container" id="pdf-0"></div>
+                <div class="info-box"><br>&nbsp;<br></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-0.5')">
+            <h4>Cover Pages (Ch. 2-34)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #1" id="cover-story-1">
+            <div class="cover-story-content">
+                <h3>Buggy's Crew Adventure Chronicles</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 35 ⟼ 75<br>
+                ➼ Syrup Village ⟼ Arlong Park
+                </p>
+                <div class="pdf-container" id="pdf-1"></div>
+                <div class="info-box">takes place between the events of <strong>Orange Town</strong> and <strong>Loguetown</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-1.5')">
+            <h4>Cover Pages (Ch. 38-69 & 76-82)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #2" id="cover-story-2">
+            <div class="cover-story-content">
+                <h3>Koby-Meppo's Struggle Diary</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 83 ⟼ 119<br>
+                ➼ Arlong Park ⟼ Little Garden
+                </p>
+                <div class="pdf-container" id="pdf-2"></div>
+                <div class="info-box">takes place between the events of <strong>Romance Dawn</strong> and <strong>Enies Lobby</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-2.5')">
+            <h4>Cover Pages (Ch. 120-125)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #3" id="cover-story-3">
+            <div class="cover-story-content">
+                <h3>Jango's Dance Paradise</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 126 ⟼ 172<br>
+                ➼ Little Garden ⟼ Alabasta
+                </p>
+                <div class="pdf-container" id="pdf-3"></div>
+                <div class="info-box">takes place between the events of <strong>Baratie</strong> and <strong>Alabasta</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-3.5')">
+            <h4>Cover Pages (Ch. 173-181)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #4" id="cover-story-4">
+            <div class="cover-story-content">
+                <h3>Hatchan's Sea-Floor Stroll</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 182 ⟼ 228<br>
+                ➼ Alabasta ⟼ Jaya
+                </p>
+                <div class="pdf-container" id="pdf-4"></div>
+                <div class="info-box">takes place between the events of <strong>Arlong Park</strong> and <strong>Sabaody</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-4.5')">
+            <h4>Cover Pages (Ch. 229-235)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #5" id="cover-story-5">
+            <div class="cover-story-content">
+                <h3>Wapol's Omnivorous Hurrah</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 236 ⟼ 262<br>
+                ➼ Jaya ⟼ Skypiea
+                </p>
+                <div class="pdf-container" id="pdf-5"></div>
+                <div class="info-box">takes place after the events of <strong>Drum Island</strong> (and before <strong>3D2Y</strong>)</div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-5.5')">
+            <h4>Cover Pages (Ch. 263-271)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #6" id="cover-story-6">
+            <div class="cover-story-content">
+                <h3>Ace's Great Blackbeard Search</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 272 ⟼ 305<br>
+                ➼ Skypiea ⟼ Long Ring Long Land
+                </p>
+                <div class="pdf-container" id="pdf-6"></div>
+                <div class="info-box">takes place between the events of <strong>Jaya</strong> and <strong>Post-Enies Lobby</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-6.5')">
+            <h4>Cover Pages (Ch. 306-313)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #7" id="cover-story-7">
+            <div class="cover-story-content">
+                <h3>Gedatsu's Accidental Life on the Blue Sea</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 314 ⟼ 348<br>
+                ➼ Long Ring Long Land ⟼ Water 7
+                </p>
+                <div class="pdf-container" id="pdf-7"></div>
+                <div class="info-box">takes place after the events of <strong>Skypiea</strong> (and before <strong>3D2Y</strong>)</div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-7.5')">
+            <h4>Cover Pages (Ch. 349-358)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #8" id="cover-story-8">
+            <div class="cover-story-content">
+                <h3>Miss Goldenweek's "Operation: Meet Baroque Works"</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 359 ⟼ 413<br>
+                ➼ Water 7 ⟼ Enies Lobby
+                </p>
+                <div class="pdf-container" id="pdf-8"></div>
+                <div class="info-box">takes place between the events of <strong>Alabasta</strong> and <strong>Impel Down</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-8.5')">
+            <h4>Cover Pages (Ch. 414-423)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story" data-number="COVER #8.5" id="cover-story-9">
+            <div class="cover-story-content">
+                <h3>Where Are They Now? (prelude to #9)</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 424 ⟼ 427<br>
+                ➼ Enies Lobby
+                </p>
+                <div class="pdf-container" id="pdf-9"></div>
+                <div class="info-box">takes place after the events of <strong>Skypiea</strong> (and before <strong>3D2Y</strong>)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #9" id="cover-story-10">
+            <div class="cover-story-content">
+                <h3>Enel's Great Space Operations</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 428 ⟼ 474<br>
+                ➼ Enies Lobby ⟼ Thriller Bark
+                </p>
+                <div class="pdf-container" id="pdf-10"></div>
+                <div class="info-box">takes place after the events of <strong>Skypiea</strong>...</div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar completed" onclick="openCoverStoryGallery('pdf-10.5')">
+            <h4>Cover Pages (Ch. 475-485)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story" data-number="COVER #9.5" id="cover-story-11">
+            <div class="cover-story-content">
+                <h3>Where Are They Now? (prelude to #10)</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 486 ⟼ 490<br>
+                ➼ Thriller Bark
+                </p>
+                <div class="pdf-container" id="pdf-11"></div>
+                <div class="info-box">takes place after the events of <strong>Enies Lobby</strong> (and before <strong>3D2Y</strong>)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #10" id="cover-story-12">
+            <div class="cover-story-content">
+                <h3>CP9's Independent Report</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 491 ⟼ 528<br>
+                ➼ Thriller Bark ⟼ Impel Down
+                </p>
+                <div class="pdf-container" id="pdf-12"></div>
+                <div class="info-box">takes place between the events of <strong>Enies Lobby</strong> and <strong>Dressrosa</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar" onclick="openCoverStoryGallery('pdf-12.5')">
+            <h4>Cover Pages (Ch. 529-542)</h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #11-18" id="cover-story-13">
+            <div class="cover-story-content">
+                <h3>Straw Hat's Separation Serial</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 543 ⟼ 560<br>
+                ➼ Impel Down ⟼ Marineford
+                </p>
+                <div class="pdf-container" id="pdf-13"></div>
+                <div class="info-box">takes place between the events of <strong>Sabaody</strong> and <strong>Post-Marineford</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar" onclick="openCoverStoryGallery('pdf-13.5')">
+            <h4>Cover Pages (Ch. 561-597) &<br>Cover Pages (Ch. 599-611) <span style="color: #30948a; font-size: 0.77em;">[Fan Requests]</span></h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #19" id="cover-story-14">
+            <div class="cover-story-content">
+                <h3>From the Decks of the World</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 613 ⟼ 668<br>
+                ➼ Fish-Man Island ⟼ Punk Hazard
+                </p>
+                <div class="pdf-container" id="pdf-14"></div>
+                <div class="info-box">takes place between the events of <strong>Return to Sabaody</strong> and <strong>Dressrosa</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar" onclick="openCoverStoryGallery('pdf-14.5')">
+            <h4>Cover Pages (Ch. 669-673)&thinsp;&thinsp;<span style="color: #30948a; font-size: 0.77em;">[Fan Requests]</span></h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story completed" data-number="COVER #20" id="cover-story-15">
+            <div class="cover-story-content">
+                <h3>Caribou's Kehihihihi in the New World</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 674 ⟼ 731<br>
+                ➼ Punk Hazard ⟼ Dressrosa
+                </p>
+                <div class="pdf-container" id="pdf-15"></div>
+                <!-- <div class="info-box">takes place between the events of <strong>Fish-Man Island</strong> and <strong>Wano Kuni</strong></div> -->
+                <div class="info-box">takes place between the events of <strong>Fish-Man Island</strong> and <span class="spoiler" onclick="toggleSpoiler(this)"><strong>Wano Kuni</strong></span></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar" onclick="openCoverStoryGallery('pdf-15.5')">
+            <h4>Cover Pages (Ch. 732-749)&thinsp;&thinsp;<span style="color: #30948a; font-size: 0.77em;">[Fan Requests]</span></h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story" data-number="COVER #21" id="cover-story-16">
+            <div class="cover-story-content">
+                <h3>Solo Journey of Jimbei, First Son of the Sea</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 751 ⟼ 785<br>
+                ➼ Dressrosa
+                </p>
+                <div class="pdf-container" id="pdf-16"></div>
+                <div class="info-box">takes place between the events of <strong>Fish-Man Island</strong> and <strong>Whole Cake</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar" onclick="openCoverStoryGallery('pdf-16.5')">
+            <h4>Cover Pages (Ch. 786-804)&thinsp;&thinsp;<span style="color: #30948a; font-size: 0.77em;">[Fan Requests]</span></h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story" data-number="COVER #22" id="cover-story-17">
+            <div class="cover-story-content">
+                <h3>From the Decks of the World: The 500,000,000 Man Arc</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 805 ⟼ 838<br>
+                ➼ Zou ⟼ Whole Cake
+                </p>
+                <div class="pdf-container" id="pdf-17"></div>
+                <div class="info-box">takes place between the events of <strong>Dressrosa</strong> and <strong>Whole Cake</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar" onclick="openCoverStoryGallery('pdf-17.5')">
+            <h4>Cover Pages (Ch. 839-862)&thinsp;&thinsp;<span style="color: #30948a; font-size: 0.77em;">[Fan Requests]</span></h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story" data-number="COVER #23" id="cover-story-18">
+            <div class="cover-story-content">
+                <h3>The Stories of the Self-Proclaimed Straw Hat Grand Fleet</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 864 ⟼ 919<br>
+                ➼ Whole Cake ⟼ Reverie
+                </p>
+                <div class="pdf-container" id="pdf-18"></div>
+                <div class="info-box">takes place between the events of <strong>Dressrosa</strong> and <strong>Reverie</strong></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar" onclick="openCoverStoryGallery('pdf-18.5')">
+            <h4>Cover Pages (Ch. 920-947)&thinsp;&thinsp;<span style="color: #30948a; font-size: 0.77em;">[Fan Requests]</span></h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story" data-number="COVER #24" id="cover-story-19">
+            <div class="cover-story-content">
+                <h3>Capone "Gang" Bege's Oh My Family</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 948 ⟼ 994<br>
+                ➼ Wano Kuni
+                </p>
+                <div class="pdf-container" id="pdf-19"></div>
+                <div class="info-box">takes place between the events of <strong>Whole Cake</strong> and <span class="spoiler" onclick="toggleSpoiler(this)"><strong>Egghead</strong></span></div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar" onclick="openCoverStoryGallery('pdf-19.5')">
+            <h4>Cover Pages (Ch. 995-1034) <span style="color: #30948a; font-size: 0.77em;">[Fan Requests]</span></h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story" data-number="COVER #25" id="cover-story-20">
+            <div class="cover-story-content">
+                <h3>Germa 66's Cold-Blooded Voyage</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 1035 ⟼ 1078<br>
+                ➼ Wano Kuni ⟼ <span class="spoiler" onclick="toggleSpoiler(this)">Egghead</span>
+                </p>
+                <div class="pdf-container" id="pdf-20"></div>
+                <div class="info-box">takes place after the events of <strong>Whole Cake</strong> (and during <span class="spoiler" onclick="toggleSpoiler(this)"><strong>Wano</strong></span>)</div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar deactivated" onclick="openCoverStoryGallery('pdf-20.5')">
+            <h4>Cover Pages (Ch. 1079-1108) <span style="color: #30948a; font-size: 0.77em;">[Fan Requests]</span></h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="story-wrapper">
+        <div class="cover-story deactivated" data-number="COVER #26" id="cover-story-21">
+            <div class="cover-story-content">
+                <h3>Oni Child Yamato's Golden Harvest Surrogate Pilgrimage</h3>
+                <p class="chapters">
+                ➼ <u>chapters</u>: 1109 ⟼ 1162<br>
+                ➼ <span class="spoiler" onclick="toggleSpoiler(this)">Egghead</span> ⟼ <span class="spoiler" onclick="toggleSpoiler(this)">Elbaf</span>
+                </p>
+                <div class="pdf-container" id="pdf-21"></div>
+                <div class="info-box">takes place after the events of <strong>Wano Kuni</strong>...</div>
+            </div>
+        </div>
+
+        <div class="cover-request-bar deactivated" onclick="openCoverStoryGallery('pdf-21.5')">
+            <h4>Cover Pages (Ch. 1163-) <span style="color: #30948a; font-size: 0.77em;">[Fan Requests]</span></h4>
+            <div class="request-icon-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
