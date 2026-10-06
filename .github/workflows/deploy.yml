@@ -1,12 +1,12 @@
-name: Generate manifest.json + pages
+name: manifest.json + Deploy Pages
 
 on:
   push:
     branches:
-      - gh-pages  # Change to 'master' if that is your default branch name
+      - gh-pages  # Update if default branch is changed
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -30,26 +30,24 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Generate manifest.json
+      # 1. Generate the manifest locally on the runner
+      - name: Generate manifest.json locally
         run: node genManifest.js
 
-      - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: auto-update image manifest.json"
-          file_pattern: manifest.json
-
+      # 2. Configure GitHub Pages environment explicitly
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Remove PDFs to reduce artifact size
         run: rm -rf 'Colored-Cover-Stories/PDFs'
 
+      # 3. Package the entire directory (including the freshly generated manifest)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.' # Uploads the entire repository root, minus the PDFs.
+          path: '.' 
 
+      # 4. Deploy the artifact
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
