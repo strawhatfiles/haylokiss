@@ -790,6 +790,7 @@ h1 {
     min-width: 300px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .special-item:hover {
@@ -857,6 +858,50 @@ h1 {
     .special-item h4 {
         font-size: 1.1rem;
     }
+}
+
+.status-indicator {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    border: 1px solid rgba(255, 107, 107, 0.5);
+    box-shadow: 0 0 6px rgba(255, 107, 107, 0.15);
+}
+
+.status-indicator::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ff6b6b;
+}
+
+.special-item.completed .status-indicator,
+.non-canon-item.completed .status-indicator {
+    border-color: rgba(21, 255, 0, 0.6);
+    background: rgba(21, 255, 0, 0.12);
+    box-shadow: 0 0 8px rgba(21, 255, 0, 0.25);
+}
+
+.special-item.completed .status-indicator::after,
+.non-canon-item.completed .status-indicator::after {
+    content: '✓';
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1;
+    color: #15ff00;
+    background: transparent;
+    width: auto;
+    height: auto;
 }
 
 .warning-box {
@@ -1000,6 +1045,7 @@ h1 {
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .non-canon-item:hover {
@@ -1370,7 +1416,9 @@ h1 {
     min-width: 32px;
     min-height: 32px;
     overflow: visible;
+    margin-right: 10px;
     position: relative;
+    z-index: 15;
 }
 
 .download-btn:hover {
